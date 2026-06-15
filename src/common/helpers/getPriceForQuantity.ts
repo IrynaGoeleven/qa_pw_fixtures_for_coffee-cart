@@ -1,17 +1,14 @@
-import { coffeeTypes } from '../../constants';
-
-export function getPriceForQuantity(
-  coffeeType: keyof typeof coffeeTypes,
-  quantity: number,
+export function unitPriceFormatStr(
+  unitPrice: number,
+  unitsNumber: number,
 ): string {
-  const unitPrice = coffeeTypes[coffeeType];
-  return `${unitPrice.toFixed(2)} x ${quantity}`;
+  return `${unitPrice.toFixed(2)} x ${unitsNumber}`;
 }
 
 export function priceFormatStr(unitPrice: number): string {
   return `$${unitPrice.toFixed(2)}`;
 }
 
-export function totalPriceFormatStr(totalPrice: number): string {
-  return `Total: $${totalPrice.toFixed(2)}`;
+export function totalPriceFormatStr(unitsNumber: number): string {
+  return `Total: $${unitsNumber.toFixed(2)}`;
 }
